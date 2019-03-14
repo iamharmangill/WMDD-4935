@@ -1,0 +1,13 @@
+CREATE TABLE todoItems (
+    todoID INT AUTO_INCREMENT NOT NULL,
+    todoItem VARCHAR(255) NOT NULL,
+    dateCreated DATETIME NOT NULL DEFAULT now(),
+    todoStatus TEXT NOT NULL,
+    projectID INT NOT NULL,
+    PRIMARY KEY (todoId),
+    INDEX (todoItem),
+    FOREIGN KEY (projectID)
+        REFERENCES projects(projectID)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
